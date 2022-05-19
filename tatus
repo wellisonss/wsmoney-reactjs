@@ -1,0 +1,47 @@
+[33mcommit 12ee824b369a15a626a77c261475d0cdace40a96[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: wellison santos <silva.s.wellison@gmail.com>
+Date:   Tue May 17 20:27:51 2022 -0300
+
+    conectando a uma api mirage
+
+[33mcommit ae5af33f0b496a9299c99b8015788c277fc910b0[m
+Author: wellison santos <silva.s.wellison@gmail.com>
+Date:   Sat May 14 20:01:39 2022 -0300
+
+    adicionando tabela
+
+[33mcommit 3f30fd6ea1e6d1eb07e27799f8658165c41ea3c6[m
+Author: wellison santos <silva.s.wellison@gmail.com>
+Date:   Fri May 13 22:41:02 2022 -0300
+
+    adição da dashboard
+
+[33mcommit f28aa8c5740ea3ccd376ebd8b5cc49957bbfe145[m
+Author: wellison santos <silva.s.wellison@gmail.com>
+Date:   Fri May 13 19:12:54 2022 -0300
+
+    adicionando components
+
+[33mcommit 5f2ea080ea50f5ff2958d43257422a507a478399[m
+Author: wellison santos <silva.s.wellison@gmail.com>
+Date:   Thu May 12 21:58:18 2022 -0300
+
+    modificação do global.ts
+
+[33mcommit f3d8336dd5e267646097cf32cdcbadb61b5ff629[m
+Author: wellison santos <silva.s.wellison@gmail.com>
+Date:   Thu May 12 20:37:12 2022 -0300
+
+    adicionando estilo global
+
+[33mcommit 493eb02af79c89962c529ea2c65460d3b3b686d9[m
+Author: wellison santos <silva.s.wellison@gmail.com>
+Date:   Thu May 5 21:57:29 2022 -0300
+
+    commit inicial
+
+[33mcommit f2752a567e6ca3482f728b1fa3722557040e7079[m
+Author: Wellison Silva Santos <99839448+wellisonss@users.noreply.github.com>
+Date:   Thu May 5 21:52:58 2022 -0300
+
+    Initial commit
