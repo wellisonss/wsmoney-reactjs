@@ -15,7 +15,7 @@ export function NewTransactionModal ({ isOpen, onRequestClose }:NewTransactionMo
         className="content-react-modal"
      >
        <Container>
-          <h2>Nossa transação</h2>
+          <h2>Cadastrar transação</h2>
           <input placeholder='Nome'></input>
           <input placeholder='Preço'></input>
           <input placeholder='Categoria'></input>
