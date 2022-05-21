@@ -19,6 +19,34 @@ export const Container = styled.form`
 
     font-weight: 400;
     font-size: 1rem;
+  
+
+    &::placeholder {  //seletor placeholder
+      color: var(--text-body);
+    } 
+
+    & + input { // todo input que tiver um input antes dele, vai receber um marquin top
+      margin-top: 1rem;
+    }
+  }
+
+  button[type="submit"] {
+    width: 100%;
+    padding: 0 1.5rem;
+    height: 4rem;
+    background: var(--green);
+    color: #FFF;
+    border-radius: 0.25rem;
+    border: 0;
+    font-size: 1rem;
+    margin-top: 1.5rem;
+    font-weight: 600;
+
+    transition: filter 0.2s;
+
+    &:hover {
+      filter: brightness(0.9);
+    }
   }
 
 `

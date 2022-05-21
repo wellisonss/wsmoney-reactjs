@@ -71,4 +71,19 @@ export const GlocalStyle = createGlobalStyle`
     padding: 3rem;
     position: relative;
   }
+
+  .react-modal-close {
+    position: absolute;
+    right: 0.5rem;
+    top: 1.5rem;
+    background: transparent;
+    border: 0;
+
+    transition: filter 0.2s;
+
+    &:hover{
+      filter: brightness(0.8);
+    }
+
+  }
 `
