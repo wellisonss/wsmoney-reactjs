@@ -60,15 +60,20 @@ gap: 0.25rem;
 
 interface ContainerButtonModalProps{
   isActive: boolean;
+  colorActive: 'green' | 'red';
 }
 
+const color = {
+  green: 'rgba(51, 204, 149, 0.2)',
+  red: 'rgba(229, 46, 77, 0.2)'
+};
 export const ContainerButtonModal = styled.button<ContainerButtonModalProps>`
 
     height: 4rem;
     border: 1px solid #d7d7d7;
     border-radius: 0.25rem;
 
-    background: ${(props) => props.isActive ? '#FFF' : 'transparent'};
+    background: ${(props) => props.isActive ? color[props.colorActive] : 'transparent'};
 
 
     display: flex;
