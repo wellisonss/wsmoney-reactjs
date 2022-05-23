@@ -1,8 +1,9 @@
 import Modal from 'react-modal'
 import closeImg from '../../assets/fechar.svg'
-import { Container, TransationsModalButton } from './style';
 import entradaImg from '../../assets/entradas.svg'
 import saidaImg from '../../assets/saidas.svg'
+import { Container, TransationsModalButton, ContainerButtonModal } from './style';
+import { useState } from 'react';
 
 
 interface NewTransactionModalProps {
@@ -11,6 +12,9 @@ interface NewTransactionModalProps {
 }
 
 export function NewTransactionModal ({ isOpen, onRequestClose }:NewTransactionModalProps){
+
+  const [type, setType ] = useState('deposit');
+
   return (
     <Modal 
       isOpen={isOpen} 
@@ -36,15 +40,23 @@ export function NewTransactionModal ({ isOpen, onRequestClose }:NewTransactionMo
         />
 
         <TransationsModalButton>
-          <button
-          type='button'><img src={entradaImg} alt="Entrada" />
+          <ContainerButtonModal
+          type='button'
+          onClick={() => { setType('deposit'); }}
+          isActive={ type === 'deposit'}
+          >            
+            <img src={entradaImg} alt="Entrada"/>
             <span>Entrada</span>
-          </button>
+          </ContainerButtonModal>
 
-          <button
-          type='button'><img src={saidaImg} alt="Saida" />
+          <ContainerButtonModal
+          type='button'
+          onClick={() => { setType('withdraw'); }}
+          isActive={ type === 'withdraw'}
+          >            
+            <img src={saidaImg} alt="Saida"/>
             <span>Saida</span>
-          </button>
+          </ContainerButtonModal>
         </TransationsModalButton>
 
         <input
