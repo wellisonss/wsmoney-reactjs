@@ -4,6 +4,7 @@ import entradaImg from '../../assets/entradas.svg'
 import saidaImg from '../../assets/saidas.svg'
 import { Container, TransationsModalButton, ContainerButtonModal } from './style';
 import { FormEvent, useState } from 'react';
+import { api } from '../../services/api';
 
 
 interface NewTransactionModalProps {
@@ -21,12 +22,14 @@ export function NewTransactionModal ({ isOpen, onRequestClose }:NewTransactionMo
 function handleCreateNewTransation(event: FormEvent) {
     event.preventDefault();
     
-    console.log({
+    const data = {
       title,
       value,
       category,
       type
-    });
+    };
+
+    api.post('/transactions', data)
 
   }
   
@@ -45,13 +48,13 @@ function handleCreateNewTransation(event: FormEvent) {
         <img src={closeImg} alt="botao fechar modal" />
       </button>
       
-      <Container onSubmit={handleCreateNewTransation}>
+      <Container onSubmit={handleCreateNewTransation}>  
         <h2>Cadastrar transação</h2>
         
         <input
           placeholder='Nome'
-          value={title}
-          onChange={event => setTitle(event.target.value)}
+          value={title} // salvar valor do title 
+          onChange={event => setTitle(event.target.value)} // qualquer todas as vezes que o valor do campo for modificado
         />
         
         <input 
@@ -64,9 +67,9 @@ function handleCreateNewTransation(event: FormEvent) {
           <TransationsModalButton>
             <ContainerButtonModal
             type='button'
-            onClick={() => { setType('deposit'); }}
-            isActive={ type === 'deposit'}
-            colorActive="green"
+            onClick={() => { setType('deposit'); }} // marcar como deposit ao clicar no botao
+            isActive={ type === 'deposit'} // guardar caso o botao estiver ativado 
+            colorActive="green" // setar cor 
             >            
             <img src={entradaImg} alt="Entrada"/>
             <span>Entrada</span>
