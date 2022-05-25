@@ -17,6 +17,7 @@ createServer({
       id: 1,
       title: 'freelance',
       type: 'deposit',
+      category: 'mercado',
       value: 6000,
       createdAt: new Date('2021-02-12 09:00:00'),
     } ]
