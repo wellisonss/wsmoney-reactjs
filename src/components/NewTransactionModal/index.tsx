@@ -3,8 +3,9 @@ import closeImg from '../../assets/fechar.svg'
 import entradaImg from '../../assets/entradas.svg'
 import saidaImg from '../../assets/saidas.svg'
 import { Container, TransationsModalButton, ContainerButtonModal } from './style';
-import { FormEvent, useState } from 'react';
+import { FormEvent, useContext, useState } from 'react';
 import { api } from '../../services/api';
+import { TransactionsContext } from '../../TransactionsContext';
 
 
 interface NewTransactionModalProps {
@@ -13,6 +14,8 @@ interface NewTransactionModalProps {
 }
 
 export function NewTransactionModal ({ isOpen, onRequestClose }:NewTransactionModalProps){
+
+  const { createTransaction } = useContext(TransactionsContext);
   
   const [title, setTitle ] = useState('');
   const [value, setValue ] = useState(0);
@@ -21,15 +24,13 @@ export function NewTransactionModal ({ isOpen, onRequestClose }:NewTransactionMo
   
 function handleCreateNewTransation(event: FormEvent) {
     event.preventDefault();
-    
-    const data = {
+
+    createTransaction({
       title,
       value,
       category,
       type
-    };
-
-    api.post('/transactions', data)
+    })
 
   }
   
