@@ -4,7 +4,6 @@ import entradaImg from '../../assets/entradas.svg'
 import saidaImg from '../../assets/saidas.svg'
 import { Container, TransationsModalButton, ContainerButtonModal } from './style';
 import { FormEvent, useContext, useState } from 'react';
-import { api } from '../../services/api';
 import { TransactionsContext } from '../../TransactionsContext';
 
 
@@ -22,15 +21,21 @@ export function NewTransactionModal ({ isOpen, onRequestClose }:NewTransactionMo
   const [category, setCategory ] = useState('');
   const [type, setType ] = useState('deposit');
   
-function handleCreateNewTransation(event: FormEvent) {
+async function handleCreateNewTransation(event: FormEvent) {
     event.preventDefault();
 
-    createTransaction({
+    await createTransaction({
       title,
       value,
       category,
       type
     })
+
+    setTitle('');
+    setValue(0);
+    setCategory('');
+    setType('deposit');
+    onRequestClose();
 
   }
   
